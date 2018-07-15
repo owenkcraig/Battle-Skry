@@ -19,6 +19,12 @@ class Battle extends React.Component {
 						<div className="character-info">
 							<p>CHARACTER MAX HP</p>
 						</div>
+						<div className="character-info">
+							<p>CHARACTER MAX HP</p>
+						</div>
+						<div className="battle-notes">
+							<p>BATTLE NOTES</p>
+						</div>
 					</div>
 				</div>
 			</div>
