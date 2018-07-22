@@ -49,7 +49,8 @@ class App extends Component {
             <h3>Welcome {user.name}!</h3>
           </header>
           <Route exact path='/' render={({history}) => <BattleDisplay history={history} ></BattleDisplay>} />
-          <Route path='/editor' render={({history}) => <Editor refresh={this.refresh} history={history} />} />
+          <Route exact path='/editor' render={({history}) => <Editor refresh={this.refresh} history={history} />} />
+          <Route exact path='/editor/:_id' render= {(routerProps) => <Editor refresh={this.refresh} {...routerProps} />} />
         </div>
       </Router>
     );

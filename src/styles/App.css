@@ -1,28 +1,105 @@
-.App {
+/*Header styles*/
+
+.battle-skry-header {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/*Add battle button styles*/
+
+.battle-skry-display-buttons {
+  text-align: right;
+  padding-right: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.battle-skry-display-buttons a {
+  text-decoration: none;
 }
 
-.App-title {
-  font-size: 1.5em;
+/*Battle display styles*/
+
+.battle-skry-body {
+  margin: 10px;
 }
 
-.App-intro {
-  font-size: large;
+.battle-skry-display-battle .battleData {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.battle-skry-display-battle .battleData .battleDataItem {
+  flex: 1 0 calc(50% - 42px);
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+/*Battle display - monster - styles*/
+
+.battle-skry-display-battle .battle-skry-display-monster ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.battle-skry-display-battle .battle-skry-display-monster ul li:nth-child(odd) {
+  background: darkgray;
+}
+
+.battle-skry-display-battle .battle-skry-display-monster ul li:nth-child(even) {
+  background: lightgray;
+}
+
+/*Editor styles*/
+
+.editor {
+  margin: 10px;
+}
+
+.editor .edit-battle-header {
+  margin-left: 10px;
+}
+
+.editor .edit-battle-header h3 {
+  margin-bottom: 0;
+}
+
+.battle-form .editor-battleName {
+  padding: 10px;
+  width: 50%;
+  font-size: 18px;
+  margin: 10px;
+}
+
+.battle-form .edit-character {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.battle-form .edit-character:nth-child(odd) {
+  background: darkgray;
+}
+
+.battle-form .edit-character:nth-child(even) {
+  background: lightgray;
+}
+
+.battle-form .edit-character .editor-characterInfoInput {
+  flex: 1 0 calc(50% - 20px);
+}
+
+.battle-form .battle-form-add-character-button {
+  margin: 10px;
+}
+
+.battle-form .battle-form-notes {
+  margin: 10px;
+}
+
+.battle-form .battle-form-notes .editor-battleNotes {
+  width: 100%;
+}
+
+.battle-form .battle-form-submit-button {
+  margin: 10px;
 }

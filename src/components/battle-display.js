@@ -32,17 +32,20 @@ class BattleDisplay extends React.Component {
             	  </button>
             	</div>
 				<div className="battle-skry-display-battle">
-                    <ul>
+                    <div className="battleData">
                         { battleData.map(battle => {
                             return(
-                                <li key={battle._id}>
-                                    <h4>{ battle.battleName }</h4>
+                                <div className="battleDataItem" key={battle._id}>
+                                    <h3>{ battle.battleName }</h3>
                                     <p>{ battle.battleNotes }</p>
-                                    <MonsterDisplay monsters={battle.monsters} />
-                                </li>
+                                    <MonsterDisplay refresh={this.props.refresh} monsters={battle.monsters} />
+                                    <button className="battle-edit-button" type="button">
+                                        <Link to={`/editor/${battle._id}`}>Edit</Link>
+                                    </button>
+                                </div>
                             )
                         }) }
-                    </ul>
+                    </div>
             	</div>
           	</div>
 		);
