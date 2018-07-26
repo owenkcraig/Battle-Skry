@@ -54,7 +54,8 @@ class Editor extends React.Component {
 			const body = {
 				battleName: this.state.battleName,
 				battleNotes: this.state.battleNotes,
-				monsters: Object.values(this.state.monsters)
+				monsters: Object.values(this.state.monsters),
+				userId: this.props.user._id
 			}
 
 		  	axios.post("/battlesPost", body).then(res => {
@@ -68,7 +69,7 @@ class Editor extends React.Component {
 				monsters: Object.values(this.state.monsters)
 			}
 
-		  	axios.patch(`/battlesPatch/${this.props.match.params._id}`, body).then(res => {
+		  	axios.patch(`/battlesPatch/battle/${this.props.match.params._id}`, body).then(res => {
 		    	this.props.history.push('/');
 			}).catch( err => console.log(err))
 	  };
@@ -76,7 +77,7 @@ class Editor extends React.Component {
 
 	delete = (e) => {
 		e.preventDefault();
-		axios.delete(`/battlesPatch/${this.props.match.params._id}`).then(res => {
+		axios.delete(`/battlesPatch/battle/${this.props.match.params._id}`).then(res => {
 	    	this.props.history.push('/');
 		}).catch( err => console.log(err)) 
 	}
@@ -94,7 +95,7 @@ class Editor extends React.Component {
 	componentDidMount = async () => {
     	if (!this.props.match || !this.props.match.params._id) return;
     	const thisBattleId = this.props.match.params._id;
-    	const result = await axios.get(`/battlesGet/${thisBattleId}`);
+    	const result = await axios.get(`/battlesGet/battle/${thisBattleId}`);
     	const payload = result.data.payload;
     	this.setState({
     		battleName: payload.battleName,

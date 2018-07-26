@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "config": "^1.31.0",
     "express": "^4.16.3",
     "mongoose": "^5.1.6",
     "react": "^16.4.0",
@@ -19,7 +20,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server": "nodemon lib/server.js --ignore src/",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd src && npm install --only=dev && npm install && npm run build"
   },
   "devDependencies": {
     "concurrently": "^3.5.1"

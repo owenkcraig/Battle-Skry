@@ -20,8 +20,6 @@ class App extends Component {
     this.setState({ user, loading: false })
   }
 
-
-
   refresh = () => {
     this.loadBattles();
   }
@@ -48,9 +46,9 @@ class App extends Component {
             <h1>Battle Skry</h1>
             <h3>Welcome {user.name}!</h3>
           </header>
-          <Route exact path='/' render={({history}) => <BattleDisplay history={history} ></BattleDisplay>} />
-          <Route exact path='/editor' render={({history}) => <Editor refresh={this.refresh} history={history} />} />
-          <Route exact path='/editor/:_id' render= {(routerProps) => <Editor refresh={this.refresh} {...routerProps} />} />
+          <Route exact path='/' render={({history}) => <BattleDisplay user={this.state.user} refresh={this.refresh} history={history} ></BattleDisplay>} />
+          <Route exact path='/editor' render={({history}) => <Editor user={this.state.user} refresh={this.refresh} history={history} />} />
+          <Route exact path='/editor/:_id' render= {(routerProps) => <Editor user={this.state.user} refresh={this.refresh} {...routerProps} />} />
         </div>
       </Router>
     );
